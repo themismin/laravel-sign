@@ -1,0 +1,22 @@
+{
+    "name": "themismin/laravel-sign",
+    "authors": [
+        {
+            "name": "themismin",
+            "email": "ThemisMin@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ThemisMin\\LaravelSign\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ThemisMin\\LaravelSign\\ServiceProvider"
+            ]
+        }
+    }
+}
