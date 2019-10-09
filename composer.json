@@ -6,6 +6,8 @@
             "email": "ThemisMin@gmail.com"
         }
     ],
+    "type": "library",
+    "license": "MIT",
     "require": {},
     "autoload": {
         "psr-4": {
