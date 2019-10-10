@@ -3,6 +3,7 @@
 namespace ThemisMin\LaravelSign\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Class LaravelSign: 接口参数加密校验
@@ -37,6 +38,7 @@ class LaravelSign
             }
 
             if ($sign != $resultSign) {
+                Log::error('sign error', $request->all());
                 return response_json('sign error', 500);
             }
         }
