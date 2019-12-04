@@ -32,6 +32,7 @@ class LaravelSign
             $data = $request->except(array_merge($except, ['sign']));
 
             if (is_array($data)) {
+                Log::info('sign str:' . $this->sortToStr($data));
                 $resultSign = md5($this->sortToStr($data) . $key);
             } else {
                 $resultSign = md5($key);
