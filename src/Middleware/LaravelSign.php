@@ -23,6 +23,8 @@ class LaravelSign
     {
         if (config('laravel-sign.enable')) {
 
+            $logEnable = config('laravel-sign.log_enable');
+
             $key = config('laravel-sign.key');
 
             $sign = $request->get('sign');
@@ -32,7 +34,9 @@ class LaravelSign
             $data = $request->except(array_merge($except, ['sign']));
 
             if (is_array($data)) {
-                Log::info('sign str:' . $this->sortToStr($data));
+                if ($logEnable) {
+                    Log::info('sign str:' . $this->sortToStr($data));
+                }
                 $resultSign = md5($this->sortToStr($data) . $key);
             } else {
                 $resultSign = md5($key);
