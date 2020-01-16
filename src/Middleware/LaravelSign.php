@@ -43,7 +43,7 @@ class LaravelSign
             }
 
             if ($sign != $resultSign) {
-                Log::error('sign error', $request->all());
+                Log::error('sign error:'.$request->fullUrl(), $request->all());
                 return response_json('sign error', 500);
             }
         }
